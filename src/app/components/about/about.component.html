@@ -1,0 +1,32 @@
+<section class="section" id="about" appFadeInOnScroll>
+  <div class="container about-layout">
+    <div>
+      <app-section-title
+        [title]="'About Our Scholarship Mission'"
+        [subtitle]="'We combine strategic guidance with human-centered mentorship to help students become globally competitive applicants.'"
+      />
+      <p>
+        This scholarship empowers motivated individuals to access life-changing education pathways. From evaluating
+        eligibility and selecting universities to submitting polished applications, S&B Scholarship Agency supports each
+        learner with practical guidance and personalized care.
+      </p>
+      <p>
+        Our approach is transparent, ethical, and outcome-driven so every candidate can apply with clarity, confidence,
+        and purpose.
+      </p>
+    </div>
+
+    <figure class="about-collage" aria-label="Student success collage">
+      <div class="collage-grid">
+        @for (photo of collagePhotos; track photo.src) {
+          <img
+            [src]="photo.src"
+            [alt]="photo.alt"
+            [style.grid-area]="photo.area"
+            loading="lazy"
+          />
+        }
+      </div>
+    </figure>
+  </div>
+</section>

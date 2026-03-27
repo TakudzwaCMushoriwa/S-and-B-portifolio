@@ -1,0 +1,126 @@
+.testimonials {
+  background: linear-gradient(180deg, rgba(222, 233, 255, 0.5), rgba(247, 250, 255, 0));
+}
+
+.testimonial-form {
+  background: var(--surface);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 18px;
+  box-shadow: var(--shadow-soft);
+  padding: 18px;
+  margin-bottom: 18px;
+  display: grid;
+  gap: 12px;
+
+  h3 {
+    margin: 0;
+    color: var(--color-heading);
+    font-size: 1.08rem;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    @media (min-width: 760px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  label {
+    display: grid;
+    gap: 6px;
+    color: var(--color-heading);
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid rgba(99, 102, 241, 0.24);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font: inherit;
+    color: var(--color-heading);
+    background: #ffffff;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .btn {
+    width: fit-content;
+  }
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  @media (min-width: 1080px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 16px;
+
+  .quote {
+    margin: 0;
+    color: var(--color-heading);
+    line-height: 1.7;
+    font-size: 0.95rem;
+  }
+
+  .meta {
+    display: grid;
+    gap: 4px;
+
+    h3 {
+      margin: 0;
+      color: var(--color-heading);
+      font-size: 1rem;
+    }
+
+    .program,
+    .country {
+      margin: 0;
+      color: var(--color-body);
+      font-size: 0.9rem;
+    }
+
+    .result {
+      margin-top: 8px;
+      display: inline-flex;
+      width: fit-content;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      background: rgba(16, 30, 69, 0.1);
+    }
+  }
+}
+
+.empty {
+  margin: 0;
+  text-align: center;
+  color: var(--color-body);
+}

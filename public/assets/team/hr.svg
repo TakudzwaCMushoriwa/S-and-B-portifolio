@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="HR portrait">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#11224f"/>
+      <stop offset="1" stop-color="#5f54d8"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" fill="url(#bg)"/>
+  <circle cx="160" cy="132" r="62" fill="#f7f9ff"/>
+  <path d="M66 300c10-58 50-92 94-92s84 34 94 92" fill="#f7f9ff"/>
+  <circle cx="136" cy="128" r="6" fill="#1f3168"/>
+  <circle cx="184" cy="128" r="6" fill="#1f3168"/>
+  <path d="M136 156c8 9 17 14 24 14s16-5 24-14" fill="none" stroke="#1f3168" stroke-width="5" stroke-linecap="round"/>
+</svg>

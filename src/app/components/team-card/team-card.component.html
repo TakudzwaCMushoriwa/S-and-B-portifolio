@@ -1,0 +1,34 @@
+<article class="team-card">
+  <button
+    type="button"
+    class="card-trigger"
+    (click)="openProfile()"
+    [attr.aria-expanded]="profileOpen()"
+  >
+    @if (member().image) {
+      <img [src]="member().image" [alt]="member().name" loading="lazy" />
+    }
+    <h3>{{ member().name }}</h3>
+    <p>{{ member().role }}</p>
+    @if (member().bio?.length) {
+      <span class="hint">Tap to read profile</span>
+    }
+  </button>
+
+  @if (profileOpen() && member().bio?.length) {
+    <div class="profile-modal-backdrop" (click)="closeProfile()" role="dialog" aria-modal="true" [attr.aria-label]="member().name + ' profile'">
+      <div class="profile-modal" (click)="$event.stopPropagation()">
+        <div class="profile-header">
+          <h4>{{ member().name }}</h4>
+          <button type="button" class="close-btn" (click)="closeProfile()" aria-label="Close profile">Close</button>
+        </div>
+        <p class="role">{{ member().role }}</p>
+        <div class="bio">
+          @for (paragraph of member().bio; track paragraph) {
+            <p>{{ paragraph }}</p>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</article>

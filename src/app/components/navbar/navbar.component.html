@@ -1,0 +1,19 @@
+<header class="navbar" [class.scrolled]="isScrolled()">
+  <div class="container nav-inner">
+    <a class="logo" [routerLink]="['/']" fragment="home" (click)="closeMenu()">
+      <span>S&B</span>
+      <small>Scholarship Agency</small>
+    </a>
+
+    <button class="menu-btn" type="button" (click)="toggleMenu()" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav [class.open]="menuOpen()">
+      @for (item of navItems; track item.fragment) {
+        <a [routerLink]="['/']" [fragment]="item.fragment" (click)="closeMenu()">{{ item.label }}</a>
+      }
+      <a class="apply-btn" [routerLink]="['/']" fragment="contact" (click)="closeMenu()">Apply Now</a>
+    </nav>
+  </div>
+</header>

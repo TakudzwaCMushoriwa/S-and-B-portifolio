@@ -1,0 +1,81 @@
+.about-layout {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 768px) {
+    gap: 32px;
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-body);
+    line-height: 1.9;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+  }
+
+  p + p {
+    margin-top: 14px;
+  }
+
+  :where(app-section-title) {
+    display: block;
+    text-align: left;
+    margin-bottom: 18px;
+  }
+
+  .about-collage {
+    margin: 0;
+    background: var(--surface);
+    border-radius: 20px;
+    padding: 14px;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    box-shadow: var(--shadow-soft);
+
+    @media (min-width: 768px) {
+      border-radius: 24px;
+      padding: 18px;
+    }
+
+    .collage-grid {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-areas:
+        'p1 p1 p2'
+        'p1 p1 p3'
+        'p4 p5 p5';
+
+      @media (max-width: 600px) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+          'p1 p1'
+          'p2 p3'
+          'p4 p5';
+      }
+    }
+
+    img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 1px solid rgba(99, 102, 241, 0.14);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+      transition: transform 220ms ease, box-shadow 220ms ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 28px rgba(15, 23, 42, 0.16);
+      }
+    }
+  }
+}

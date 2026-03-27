@@ -1,0 +1,14 @@
+<section class="section services" id="services" appFadeInOnScroll>
+  <div class="container">
+    <app-section-title
+      [title]="'Services Designed for Scholarship Success'"
+      [subtitle]="'Our process removes uncertainty and gives students a structured path toward competitive applications.'"
+    />
+
+    <div class="services-grid">
+      @for (service of services; track service.title) {
+        <app-service-card [service]="service" />
+      }
+    </div>
+  </div>
+</section>

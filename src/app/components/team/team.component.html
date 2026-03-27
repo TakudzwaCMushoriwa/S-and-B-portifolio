@@ -1,0 +1,14 @@
+<section class="section" id="team" appFadeInOnScroll>
+  <div class="container">
+    <app-section-title
+      [title]="'Meet the Team'"
+      [subtitle]="'Experienced professionals committed to building your scholarship journey with excellence and care.'"
+    />
+
+    <div class="team-grid">
+      @for (member of teamMembers; track member.name) {
+        <app-team-card [member]="member" />
+      }
+    </div>
+  </div>
+</section>

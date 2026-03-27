@@ -1,0 +1,46 @@
+.service-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-soft);
+  transition: transform 280ms ease, box-shadow 280ms ease;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(145deg, rgba(99, 102, 241, 0.2), rgba(19, 33, 68, 0.8));
+    margin-bottom: 16px;
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      path {
+        fill: #f4f7ff;
+      }
+    }
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    color: var(--color-heading);
+    font-size: 1.15rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--color-body);
+    line-height: 1.7;
+  }
+}

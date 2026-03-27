@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root {
+	--color-primary: #101e45;
+	--color-primary-soft: #1f356c;
+	--color-secondary: #6255d8;
+	--color-secondary-soft: #8678f2;
+	--color-heading: #0f1837;
+	--color-body: #425071;
+	--color-surface: #ffffff;
+	--color-background: #f3f6ff;
+
+	--gradient-primary: linear-gradient(135deg, #101e45 0%, #6255d8 100%);
+	--glass-bg: rgba(255, 255, 255, 0.68);
+	--glass-border: rgba(99, 85, 216, 0.23);
+	--surface: rgba(255, 255, 255, 0.88);
+
+	--space-1: 8px;
+	--space-2: 16px;
+	--space-3: 24px;
+	--space-4: 32px;
+	--space-5: 40px;
+	--space-6: 48px;
+	--space-7: 56px;
+	--space-8: 64px;
+
+	--shadow-soft: 0 12px 30px rgba(16, 30, 69, 0.08);
+	--shadow-elevated: 0 20px 46px rgba(16, 30, 69, 0.14);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	font-family: 'Poppins', sans-serif;
+	color: var(--color-body);
+	background:
+		radial-gradient(circle at 10% 6%, rgba(98, 85, 216, 0.2), transparent 42%),
+		radial-gradient(circle at 92% 4%, rgba(16, 30, 69, 0.18), transparent 36%),
+		linear-gradient(180deg, #f7f9ff 0%, #eff3ff 100%);
+	min-height: 100vh;
+}
+
+a {
+	color: inherit;
+}
+
+img {
+	max-width: 100%;
+}
+
+.container {
+	width: min(1120px, 100% - 24px);
+	margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+	.container {
+		width: min(1120px, 100% - 40px);
+	}
+}
+
+.section {
+	padding: var(--space-6) 0;
+}
+
+@media (min-width: 768px) {
+	.section {
+		padding: var(--space-8) 0;
+	}
+}
+
+section[id] {
+	scroll-margin-top: 96px;
+}
+
+@media (max-width: 640px) {
+	section[id] {
+		scroll-margin-top: 80px;
+	}
+}
+
+.btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 0;
+	border-radius: 12px;
+	padding: 12px 20px;
+	font: inherit;
+	font-weight: 600;
+	text-decoration: none;
+	transition: transform 220ms ease, box-shadow 220ms ease, background-color 220ms ease;
+	cursor: pointer;
+	font-size: clamp(0.875rem, 2vw, 1rem);
+
+	&:hover {
+		transform: translateY(-2px);
+	}
+
+	@media (max-width: 640px) {
+		padding: 10px 16px;
+	}
+}
+
+.btn.primary {
+	background: var(--gradient-primary);
+	color: #ffffff;
+	box-shadow: 0 14px 28px rgba(16, 30, 69, 0.22);
+}
+
+.btn.ghost {
+	background: rgba(98, 85, 216, 0.08);
+	color: var(--color-primary);
+	border: 1px solid rgba(98, 85, 216, 0.25);
+}
+
+.fade-in-on-scroll {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 620ms ease, transform 620ms ease;
+}
+
+.fade-in-on-scroll.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	.fade-in-on-scroll {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.btn {
+		transition: none;
+	}
+}
+
+@media (max-width: 780px) {
+	.section {
+		padding: var(--space-7) 0;
+	}
+
+	.container {
+		width: min(1120px, 100% - 28px);
+	}
+}
