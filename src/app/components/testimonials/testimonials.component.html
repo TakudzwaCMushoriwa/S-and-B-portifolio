@@ -2,15 +2,16 @@
   <div class="container">
     <app-section-title
       [title]="'Success Stories'"
-      [subtitle]="'Clients can submit their own testimony and it appears here immediately.'"
+      [subtitle]="'Published testimonies are shared to all users from one source file.'"
     />
 
     <form
       class="testimonial-form"
       #testimonialForm
-      (submit)="submitTestimonial(nameInput.value, countryInput.value, programInput.value, quoteInput.value, resultInput.value, testimonialForm); $event.preventDefault()"
+      (submit)="submitTestimonialEmail(nameInput.value, countryInput.value, programInput.value, quoteInput.value, resultInput.value, testimonialForm); $event.preventDefault()"
     >
-      <h3>Share Your Testimony</h3>
+      <h3>Submit a Testimony</h3>
+      <p class="note">Your email app will open so your testimony can be reviewed and then published to all users.</p>
       <div class="form-grid">
         <label>
           Full Name
@@ -39,25 +40,27 @@
           required
         ></textarea>
       </label>
-      <button class="btn primary" type="submit">Submit Testimony</button>
+      <button class="btn primary" type="submit">Send for Publishing</button>
     </form>
 
-    @if (testimonials.length > 0) {
-      <div class="testimonials-grid">
-        @for (item of testimonials; track item.createdAt) {
-          <article class="testimonial-card">
-            <p class="quote">"{{ item.quote }}"</p>
-            <div class="meta">
-              <h3>{{ item.name }}</h3>
-              <p class="program">{{ item.program }}</p>
-              <p class="country">{{ item.country }}</p>
-              <span class="result">{{ item.result }}</span>
-            </div>
-          </article>
-        }
-      </div>
-    } @else {
-      <p class="empty">No testimonies yet. Be the first to share your success story.</p>
+    @if (testimonials$ | async; as testimonials) {
+      @if (testimonials.length > 0) {
+        <div class="testimonials-grid">
+          @for (item of testimonials; track item.name + item.program) {
+            <article class="testimonial-card">
+              <p class="quote">"{{ item.quote }}"</p>
+              <div class="meta">
+                <h3>{{ item.name }}</h3>
+                <p class="program">{{ item.program }}</p>
+                <p class="country">{{ item.country }}</p>
+                <span class="result">{{ item.result }}</span>
+              </div>
+            </article>
+          }
+        </div>
+      } @else {
+        <p class="empty">No published testimonies yet.</p>
+      }
     }
   </div>
 </section>
