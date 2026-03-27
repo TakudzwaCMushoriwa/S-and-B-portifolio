@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "node ./node_modules/@angular/cli/bin/ng.js",
+    "dev": "node ./node_modules/@angular/cli/bin/ng.js serve",
     "start": "node ./node_modules/@angular/cli/bin/ng.js serve",
     "build": "node ./node_modules/@angular/cli/bin/ng.js build",
     "watch": "node ./node_modules/@angular/cli/bin/ng.js build --watch --configuration development",
